@@ -20,7 +20,6 @@ class ViewController: UIViewController {
   let firstFrame = CGRect(x: 100, y: 100, width: 100, height: 100)
   let secondFrame = CGRect(x: 150, y: 150, width: 200, height: 200)
   var imageView: UIImageView!
-  var constraint: NSLayoutConstraint!
 
   //MARK: - View lifecycle
   override func viewDidLoad() {
@@ -37,18 +36,6 @@ class ViewController: UIViewController {
     imageView.clipsToBounds = true
     imageView.frame = CGRect(x: 10, y: 300, width: 100, height: 100)
     view.addSubview(imageView)
-
-    constraint = NSLayoutConstraint(
-      item: view,
-      attribute: .width,
-      relatedBy: .equal,
-      toItem: imageView!,
-      attribute: .width,
-      multiplier: 0.5,
-      constant: 0
-    )
-
-    view.addConstraint(constraint)
   }
 
 
